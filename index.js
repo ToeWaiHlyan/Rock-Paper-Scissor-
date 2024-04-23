@@ -1,16 +1,16 @@
 document.querySelector('.rock-js-button').addEventListener('click',()=>
 {
-    playGame('Rock');
+    playGame('rock');
 })
 
 document.querySelector('.paper-js-button').addEventListener('click',()=>
 {
-    playGame('Paper');
+    playGame('paper');
 });
 
 document.querySelector('.scissor-js-button').addEventListener('click',()=>
 {
-    playGame ('Scissor');
+    playGame ('scissor');
 });
 
 function resetScore()
@@ -98,17 +98,17 @@ function pickComputerMove()
 
     if (randomNumber >= 0 && randomNumber < 1/3)
     {
-        computerMove = 'Rock';
+        computerMove = 'rock';
     }
 
     else if (randomNumber >= 1/3 && randomNumber < 2/3)
     {
-        computerMove = 'Paper';
+        computerMove = 'paper';
     }
     
     else if (randomNumber >= 2/3 && randomNumber < 1)
     {
-        computerMove = 'Scissor';
+        computerMove = 'scissor';
     }
     return computerMove;
 }
@@ -118,49 +118,49 @@ function playGame(playerMove)
     let result = '';
     let computerMove = pickComputerMove();
 
-    if (playerMove === 'Rock')
+    if (playerMove === 'rock')
     {
-        if (computerMove === 'Rock')
+        if (computerMove === 'rock')
         {
             result = 'Tie';
         }
-        else if (computerMove === 'Paper')
+        else if (computerMove === 'paper')
         {
             result = 'You Lose';
         }
-        else if (computerMove === 'Scissor')
+        else if (computerMove === 'scissor')
         {
             result = 'You Win';
         }
     }
 
-    else if (playerMove === 'Paper')
+    else if (playerMove === 'paper')
     {
-        if (computerMove === 'Rock')
+        if (computerMove === 'rock')
         {
             result = 'You Win';
         }
-        else if (computerMove === 'Paper')
+        else if (computerMove === 'paper')
         {
             result = 'Tie';
         }
-        else if (computerMove === 'Scissor')
+        else if (computerMove === 'scissor')
         {
             result = 'You Lose';
         }
     }
 
-    else if (playerMove === 'Scissor')
+    else if (playerMove === 'scissor')
     {
-        if (computerMove === 'Rock')
+        if (computerMove === 'rock')
         {
             result = 'You Lose';
         }
-        else if (computerMove === 'Paper')
+        else if (computerMove === 'paper')
         {
             result = 'You Win';
         }
-        else if (computerMove === 'Scissor')
+        else if (computerMove === 'scissor')
         {
             result = 'Tie';
         }
@@ -200,12 +200,14 @@ function resetConfirm()
 {
     document.querySelector('.js-reset-confirmation').innerHTML = 
     `Are you sure to delete scores?
+    <div class="reset-button-container">
     <button class="reset-confirm-yes">
     Yes
     </button>
     <button class="reset-confirm-no">
     No
-    </button>`;
+    </button></div>
+`;
 
     document.querySelector('.reset-confirm-yes').addEventListener('click',()=>
     {
